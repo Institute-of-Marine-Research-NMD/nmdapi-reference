@@ -1,2 +1,2 @@
 # nmdapi-reference
-NMDAPI for reference data.
+API for reference projects
