@@ -1,7 +1,7 @@
 package no.imr.nmdapi.reference.service;
 
 import java.util.List;
-import no.imr.nmdapi.dao.file.NMDDataDao;
+import no.imr.nmdapi.dao.file.NMDSeriesReferenceDao;
 import no.imr.nmdapi.exceptions.BadRequestException;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
 import no.imr.nmdapi.generic.response.v1.ResultElementType;
@@ -22,42 +22,49 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
     private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(NMDReferenceServiceImpl.class);
 
     /**
+     * Data type.
+     */
+    private static final String TYPE = "reference";
+
+    @Autowired
+    private Configuration configuration;
+
+    /**
      * Application properties.
      */
     @Autowired
     private Configuration configuration;
 
     @Autowired
-    private NMDDataDao nmdDataDao;
+    private NMDSeriesReferenceDao seriesReferenceDao;
 
     @Override
     public Object getData(final String name) {
-        Class c;
-        try {
-            c = Class.forName("table.".concat(name));
-            return nmdDataDao.get(name, c);
-        } catch (ClassNotFoundException ex) {
-            LOG.info("Class not found. ".concat(name));
-            throw new BadRequestException("No information about. ".concat(name));
-        }
+        return seriesReferenceDao.get(name, "no.imr.commons.nmdreference.domain.v1");
     }
 
     @Override
     public void deleteData(final String name) {
-        nmdDataDao.delete(name);
+        seriesReferenceDao.delete(TYPE, name, true);
     }
 
    @Override
     public void insertData(final String name, final Object data) {
+        String readRole = configuration.getString("default.readrole");
+        String writeRole = configuration.getString("default.writerole");
+        String owner = configuration.getString("default.owner");
+        seriesReferenceDao.insert(writeRole, readRole, owner, TYPE, name, data, true);
     }
 
     @Override
     public void updateData(final String name, final Object data) {
+        seriesReferenceDao.update(name, data);
+
     }
 
     @Override
     public ListElementType list() {
-        List<String> names = nmdDataDao.listSeries();
+        List<String> names = seriesReferenceDao.list();
         ListElementType elementType = new ListElementType();
         for (String name : names) {
             ResultElementType resultElementType = new ResultElementType();
