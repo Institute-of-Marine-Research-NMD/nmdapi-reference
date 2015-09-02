@@ -2,7 +2,6 @@ package no.imr.nmdapi.reference.service;
 
 import java.util.List;
 import no.imr.nmdapi.dao.file.NMDSeriesReferenceDao;
-import no.imr.nmdapi.exceptions.BadRequestException;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
 import no.imr.nmdapi.generic.response.v1.ResultElementType;
 import org.apache.commons.configuration.Configuration;
@@ -26,12 +25,6 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
      */
     private static final String TYPE = "reference";
 
-    @Autowired
-    private Configuration configuration;
-
-    /**
-     * Application properties.
-     */
     @Autowired
     private Configuration configuration;
 
