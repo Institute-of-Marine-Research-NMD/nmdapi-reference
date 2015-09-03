@@ -40,7 +40,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureContentNegotiation(
             ContentNegotiationConfigurer configurer) {
-        configurer.favorPathExtension(false).
+            configurer.favorPathExtension(false).
                 favorParameter(true).
                 ignoreAcceptHeader(true).
                 parameterName("format").
@@ -85,8 +85,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public HttpMessageConverter getReferenceMappingJaxBHttpMessageConverter() {
         JAXBHttpMessageConverter converter = null;
         try {
-            converter = new JAXBHttpMessageConverter(new ReferencePrefixMapper(),
-                    "no.imr.nmd.commons.reference.jaxb.v1");
+            converter = new JAXBHttpMessageConverter(new ReferencePrefixMapper(), true,
+                    "no.imr.commons.nmdreference.domain.v1");
         } catch (JAXBException ex) {
             LOGGER.error("Error creating message converter.", ex);
         }
@@ -96,7 +96,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     private HttpMessageConverter<?> getResponseMappingJaxBHttpMessageConverter() {
         JAXBHttpMessageConverter converter = null;
         try {
-            converter = new JAXBHttpMessageConverter(new ResponseNamespacePrefixMapper(),
+            converter = new JAXBHttpMessageConverter(new ResponseNamespacePrefixMapper(), false,
                     "no.imr.nmdapi.generic.response.v1");
         } catch (JAXBException ex) {
             LOGGER.error("Error creating message converter.", ex);
