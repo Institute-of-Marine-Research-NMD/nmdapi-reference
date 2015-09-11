@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import java.util.List;
 import javax.xml.bind.JAXBException;
 import no.imr.nmdapi.common.jaxb.converters.JAXBHttpMessageConverter;
+import no.imr.nmdapi.reference.converters.mapper.DatasetNamespacePrefixMapper;
 import no.imr.nmdapi.reference.converters.mapper.ReferencePrefixMapper;
 import no.imr.nmdapi.reference.converters.mapper.ResponseNamespacePrefixMapper;
 import org.slf4j.Logger;
@@ -40,7 +41,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void configureContentNegotiation(
             ContentNegotiationConfigurer configurer) {
-            configurer.favorPathExtension(false).
+        configurer.favorPathExtension(false).
                 favorParameter(true).
                 ignoreAcceptHeader(true).
                 parameterName("format").
@@ -60,6 +61,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(getMappingJacksonHttpMessageConverter());
         converters.add(getReferenceMappingJaxBHttpMessageConverter());
+        converters.add(getDatasetMappingJaxBHttpMessageConverter());
         converters.add(getResponseMappingJaxBHttpMessageConverter());
     }
 
@@ -98,6 +100,22 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         try {
             converter = new JAXBHttpMessageConverter(new ResponseNamespacePrefixMapper(), false,
                     "no.imr.nmdapi.generic.response.v1");
+        } catch (JAXBException ex) {
+            LOGGER.error("Error creating message converter.", ex);
+        }
+        return converter;
+    }
+
+    /**
+     * Creates the xml converter for nmddataset
+     *
+     * @return The xml converter.
+     */
+    @Bean(name = "jaxbDatasetMessageConverter")
+    public HttpMessageConverter getDatasetMappingJaxBHttpMessageConverter() {
+        JAXBHttpMessageConverter converter = null;
+        try {
+            converter = new JAXBHttpMessageConverter(new DatasetNamespacePrefixMapper(), true, "no.imr.nmd.commons.dataset.jaxb");
         } catch (JAXBException ex) {
             LOGGER.error("Error creating message converter.", ex);
         }

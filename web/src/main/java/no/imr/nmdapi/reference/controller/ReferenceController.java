@@ -1,6 +1,8 @@
 package no.imr.nmdapi.reference.controller;
 
 import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
+import no.imr.nmd.commons.dataset.jaxb.DatasetType;
+import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
 import no.imr.nmdapi.reference.service.NMDReferenceService;
 import org.slf4j.Logger;
@@ -37,10 +39,10 @@ public class ReferenceController {
      * Service layer object for nmd mission queries.
      */
     @Autowired
-    private NMDReferenceService nmdStoxService;
+    private NMDReferenceService refService;
 
     /**
-     * Get data for cruiseserie.
+     * Get data.
      *
      * @param name
      * @return
@@ -51,7 +53,7 @@ public class ReferenceController {
     @ResponseBody
     public Object find(@PathVariable(value = "name") String name) {
         LOGGER.info("Start ReferenceController.find");
-        return nmdStoxService.getData(name);
+        return refService.getData(name);
     }
 
     /**
@@ -65,7 +67,7 @@ public class ReferenceController {
     @ResponseBody
     public void delete(@PathVariable(value = "name") String name) {
         LOGGER.info("Start ReferenceController.delete");
-        nmdStoxService.deleteData(name);
+        refService.deleteData(name);
     }
 
     /**
@@ -80,7 +82,7 @@ public class ReferenceController {
     @ResponseBody
     public void insert(@PathVariable(value = "name") String name, @RequestBody Object data) {
         LOGGER.info("Start ReferenceController.insert");
-        nmdStoxService.insertData(name, data);
+        refService.insertData(name, data);
     }
 
     /**
@@ -95,7 +97,7 @@ public class ReferenceController {
     @ResponseBody
     public void update(@PathVariable(value = "name") String name, @RequestBody Object data) {
         LOGGER.info("Start ReferenceController.update");
-        nmdStoxService.updateData(name, data);
+        refService.updateData(name, data);
     }
 
     /**
@@ -109,7 +111,50 @@ public class ReferenceController {
     @ResponseBody
     public ListElementType list() {
         LOGGER.info("Start ReferenceController.list");
-        return nmdStoxService.list();
+        return refService.list();
+    }
+
+    /**
+     * List all dataset information.
+     *
+     * @return
+     */
+    @PerformanceLogging
+    @RequestMapping(params = "dataset",value = "/", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public DatasetsType listDatasets() {
+        LOGGER.info("Start ReferenceController.listDatasets");
+        return refService.listDatasets();
+    }
+
+    /**
+     * Update dataset information.
+     *
+     * @param dataset
+     */
+    @PerformanceLogging
+    @RequestMapping(params = "dataset",value = "/", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public void updateDatasetInfo(@RequestBody DatasetType dataset) {
+        LOGGER.info("Start ReferenceController.updateDatasetInfo");
+        refService.updateDatasets(dataset);
+    }
+
+    /**
+     * Get data.
+     *
+     * @param name
+     * @return
+     */
+    @PerformanceLogging
+    @RequestMapping(value = "/{name}/info", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public Object findInfo(@PathVariable(value = "name") String name) {
+        LOGGER.info("Start ReferenceController.findInfo");
+        return refService.getInfo(name);
     }
 
 }
