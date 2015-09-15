@@ -4,6 +4,7 @@ import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
+import no.imr.nmdapi.generic.response.v1.ListElementWithParamsType;
 import no.imr.nmdapi.reference.service.NMDReferenceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -109,7 +110,7 @@ public class ReferenceController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public ListElementType list() {
+    public ListElementWithParamsType list() {
         LOGGER.info("Start ReferenceController.list");
         return refService.list();
     }

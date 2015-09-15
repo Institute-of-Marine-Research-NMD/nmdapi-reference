@@ -1,12 +1,16 @@
 package no.imr.nmdapi.reference.init;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.EnumSet;
+import java.util.logging.Level;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration.Dynamic;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import no.imr.framework.logging.logback.initalize.InitalizeLogbackHandler;
 import no.imr.framework.logging.slf4j.exceptions.LoggerInitalizationException;
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
@@ -53,8 +57,8 @@ public class WebAppInitalizer extends AbstractDispatcherServletInitializer {
         super.onStartup(servletContext);
         Dynamic mdcFilter = servletContext.addFilter("MDCInsertingServletFilter", ch.qos.logback.classic.helpers.MDCInsertingServletFilter.class);
         mdcFilter.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), false, "/*");
-        Dynamic securityFilter = servletContext.addFilter(AbstractSecurityWebApplicationInitializer.DEFAULT_FILTER_NAME, DelegatingFilterProxy.class);
-        securityFilter.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), false, "/*");
+//        Dynamic securityFilter = servletContext.addFilter(AbstractSecurityWebApplicationInitializer.DEFAULT_FILTER_NAME, DelegatingFilterProxy.class);
+//        securityFilter.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), false, "/*");
 
         Dynamic encodingFilter = servletContext.addFilter("encodingFilter", org.springframework.web.filter.CharacterEncodingFilter.class);
         encodingFilter.setInitParameter("encoding", "UTF-8");

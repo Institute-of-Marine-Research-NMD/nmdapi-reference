@@ -3,6 +3,7 @@ package no.imr.nmdapi.reference.service;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
+import no.imr.nmdapi.generic.response.v1.ListElementWithParamsType;
 
 
 /**
@@ -47,7 +48,7 @@ public interface NMDReferenceService {
      *
      * @return
      */
-    ListElementType list();
+    ListElementWithParamsType list();
 
     /**
      *

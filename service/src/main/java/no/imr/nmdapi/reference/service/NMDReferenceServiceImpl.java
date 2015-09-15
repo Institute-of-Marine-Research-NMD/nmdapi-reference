@@ -1,10 +1,13 @@
 package no.imr.nmdapi.reference.service;
 
 import java.util.List;
+import javax.xml.namespace.QName;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmdapi.dao.file.NMDSeriesReferenceDao;
+import no.imr.nmdapi.generic.response.v1.ElementWithParamsType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
+import no.imr.nmdapi.generic.response.v1.ListElementWithParamsType;
 import no.imr.nmdapi.generic.response.v1.OptionKeyValueListType;
 import no.imr.nmdapi.generic.response.v1.OptionKeyValueType;
 import no.imr.nmdapi.generic.response.v1.ResultElementType;
@@ -60,12 +63,16 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
     }
 
     @Override
-    public ListElementType list() {
-        List<String> names = seriesReferenceDao.list();
-        ListElementType elementType = new ListElementType();
-        for (String name : names) {
-            ResultElementType resultElementType = new ResultElementType();
-            resultElementType.setResult(name);
+    public ListElementWithParamsType list() {
+        DatasetsType datasets = seriesReferenceDao.getDatasets();
+        ListElementWithParamsType elementType = new ListElementWithParamsType();
+        for (DatasetType dataset : datasets.getDataset()) {
+            ElementWithParamsType resultElementType = new ElementWithParamsType();
+            resultElementType.setValue(dataset.getDatasetName());
+            QName qNameCreated = new QName("created");
+            resultElementType.getOtherAttributes().put(qNameCreated, String.valueOf(dataset.getCreated().toGregorianCalendar().getTimeInMillis()));
+            QName qNameUpdated = new QName("updated");
+            resultElementType.getOtherAttributes().put(qNameUpdated, String.valueOf(dataset.getUpdated().toGregorianCalendar().getTimeInMillis()));
             elementType.getElement().add(resultElementType);
         }
         return elementType;
