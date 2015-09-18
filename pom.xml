@@ -36,7 +36,7 @@
         <dependency>
             <groupId>no.imr.nmd.commons.reference.jaxb</groupId>
             <artifactId>commons-reference-jaxb</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.4</version>
         </dependency>
         <dependency>
             <groupId>no.imr.nmdapi.common</groupId>
