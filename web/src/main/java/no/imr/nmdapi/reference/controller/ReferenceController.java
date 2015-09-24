@@ -3,7 +3,6 @@ package no.imr.nmdapi.reference.controller;
 import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
-import no.imr.nmdapi.generic.response.v1.ListElementType;
 import no.imr.nmdapi.generic.response.v1.ListElementWithParamsType;
 import no.imr.nmdapi.reference.service.NMDReferenceService;
 import org.slf4j.Logger;

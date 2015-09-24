@@ -1,6 +1,7 @@
 package no.imr.nmdapi.reference.config;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
+import java.net.URL;
 import java.util.List;
 import javax.xml.bind.JAXBException;
 import no.imr.nmdapi.common.jaxb.converters.JAXBHttpMessageConverter;
@@ -87,7 +88,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public HttpMessageConverter getReferenceMappingJaxBHttpMessageConverter() {
         JAXBHttpMessageConverter converter = null;
         try {
-            converter = new JAXBHttpMessageConverter(new ReferencePrefixMapper(), true,
+            URL schemaFile = Thread.currentThread().getContextClassLoader().getResource("reference.xsd");
+            converter = new JAXBHttpMessageConverter(new ReferencePrefixMapper(), true, schemaFile,
                     "no.imr.commons.nmdreference.domain.v1");
         } catch (JAXBException ex) {
             LOGGER.error("Error creating message converter.", ex);
