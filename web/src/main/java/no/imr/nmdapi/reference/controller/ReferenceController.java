@@ -48,7 +48,7 @@ public class ReferenceController {
      * @return
      */
     @PerformanceLogging
-    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = {"application/xml;charset=UTF-8", "application/json;charset=UTF-8"})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object find(@PathVariable(value = "name") String name) {
