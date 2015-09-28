@@ -58,11 +58,6 @@ public class TestFull {
         testType("platform");
     }
 
-    @Test
-    public void testTaxa() throws Exception {
-        testType("taxa");
-    }
-
 
     public void testType(String type) throws Exception {
 
