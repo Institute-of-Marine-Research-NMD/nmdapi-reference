@@ -2,6 +2,7 @@ package no.imr.nmdapi.reference.service;
 
 import java.util.List;
 import javax.xml.namespace.QName;
+import no.imr.nmd.commons.dataset.jaxb.DataTypeEnum;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmdapi.dao.file.NMDSeriesReferenceDao;
@@ -27,11 +28,6 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
      */
     private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(NMDReferenceServiceImpl.class);
 
-    /**
-     * Data type.
-     */
-    private static final String TYPE = "reference";
-
     @Autowired
     private Configuration configuration;
 
@@ -45,7 +41,7 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
 
     @Override
     public void deleteData(final String name) {
-        seriesReferenceDao.delete(TYPE, name, true);
+        seriesReferenceDao.delete(DataTypeEnum.REFERENCE, name, true);
     }
 
    @Override
@@ -53,7 +49,7 @@ public class NMDReferenceServiceImpl implements NMDReferenceService {
         String readRole = configuration.getString("default.readrole");
         String writeRole = configuration.getString("default.writerole");
         String owner = configuration.getString("default.owner");
-        seriesReferenceDao.insert(writeRole, readRole, owner, TYPE, name, data, true);
+        seriesReferenceDao.insert(writeRole, readRole, owner, DataTypeEnum.REFERENCE, name, data, true);
     }
 
     @Override
