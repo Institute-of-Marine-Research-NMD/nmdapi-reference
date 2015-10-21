@@ -1,5 +1,6 @@
 package no.imr.nmdapi.reference.controller;
 
+import no.imr.framework.logging.slf4j.aspects.stereotype.ArgumentLogging;
 import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
@@ -48,6 +49,7 @@ public class ReferenceController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = {"application/xml;charset=UTF-8", "application/json;charset=UTF-8"})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -62,6 +64,7 @@ public class ReferenceController {
      * @param name
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -77,6 +80,7 @@ public class ReferenceController {
      * @param data
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -92,6 +96,7 @@ public class ReferenceController {
      * @param data
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -106,6 +111,7 @@ public class ReferenceController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -120,6 +126,7 @@ public class ReferenceController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(params = "dataset",value = "/", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -134,6 +141,7 @@ public class ReferenceController {
      * @param dataset
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(params = "dataset",value = "/", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -149,6 +157,7 @@ public class ReferenceController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.GET, params = {"type=info"})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
