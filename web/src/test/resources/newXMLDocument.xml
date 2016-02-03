@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eventGears xmlns="http://www.imr.no/formats/nmdreference/v1" description="Hendelser og utstyr koblet" lookupName="eventGears">
+    <lastChanged>2011-12-07T00:00:00.000+01:00</lastChanged>
+    <selectedEvent/>
+    <eventType>0</eventtype>
+    <activityId>0</activityId>
+    <currentYear>2015</currentYear>
+    <mainGroups>
+        <uuid><value>57f2a66b6ad67bc138d5953b</value><show>-1</show></uuid>
+        <name><value>acoustics</value><show>0</show></name>
+        <ls><value>0</value><show>0</show></ls>
+        <autoStop><value>false</value><show>0</show></autoStop>
+        <comments><value></value><show>1</show></comments>
+    </mainGroups>
+    <mainGroups>
+        <uuid><value>37467d3a149506e8414f0421</value><show>-1</show></uuid>
+        <name><value>bottomgear</value><show>0</show></name>
+        <ls><value>0</value><show>0</show></ls>
+        <autoStop><value>false</value><show>0</show></autoStop>
+        <comments><value></value><show>1</show></comments>
+        <depthMin><value></value><show>1</show></depthMin>
+    </mainGroups>
+
+
+    <gears>
+
+    </gears>
+</list>

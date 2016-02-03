@@ -1,5 +1,6 @@
 package no.imr.nmdapi.reference.config;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import java.net.URL;
 import java.util.List;
@@ -76,6 +77,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setPrettyPrint(true);
         converter.getObjectMapper().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+        converter.getObjectMapper().setSerializationInclusion(JsonInclude.Include.NON_NULL);
         return converter;
     }
 

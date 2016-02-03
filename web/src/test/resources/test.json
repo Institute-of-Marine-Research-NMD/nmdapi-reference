@@ -1,0 +1,253 @@
+{
+    "eventGears":
+{
+  "selectedEvent": null,
+  "eventType": 0,
+  "activityId": 0,
+  "currentYear": 2015,
+  "mainGroups":
+  [
+    {
+      "uuid": {"value": "57f2a66b6ad67bc138d5953b","show":"-1"},
+      "name": {"value": "acoustics","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "37467d3a149506e8414f0421","show":"-1"},
+      "name": {"value": "bottomgear","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "depthMin": {"value": "","show":"1"},
+      "depthMax": {"value": "","show":"1"},
+      "wireLength": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "76b5a07d1bf5abd7f74e507c","show":"v"},
+      "name": {"value": "ctd","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "instrument_sea": {"value": "","show":"1"},
+      "instrument_clouds": {"value": "","show":"1"},
+      "instrument_ice": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "04f71a9995bb6c969f154033","show":"-1"},
+      "name": {"value": "lander","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "landerType": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "f5230278ce071f47add55323","show":"-1"},
+      "name": {"value": "other","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": true,"show":"0"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "e1f2ba7765c8074845b5c3fc","show":"-1"},
+      "name": {"value": "plantonGear","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "depthMin": {"value": "","show":"1"},
+      "depthMax": {"value": "","show":"1"},
+      "wireLength": {"value": "","show":"1"},
+      "quantity": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "f7b9351bb5ec5e4e75d9a471","show":"-1"},
+      "name": {"value": "rov","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "depthMin": {"value": "","show":"1"},
+      "depthMax": {"value": "","show":"1"},
+      "depth": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "707832091df4abb887cacfa9","show":"-1"},
+      "name": {"value": "seaMammals","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": true,"show":"0"},
+      "type": {"value": "","show":"1"},
+      "quantity": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "fe5d2a0bc7ae2c14bd356894","show":"-1"},
+      "name": {"value": "towedVessel","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "depthMin": {"value": "","show":"1"},
+      "depthMax": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    },
+    {
+      "uuid": {"value": "70a5ea63500d5b3643bf7209","show":"-1"},
+      "name": {"value": "trawl","show":"0"},
+      "ls": {"value": "0","show":"0"},
+      "autoStop": {"value": false,"show":"0"},
+      "serialNumber": {"value": "0","show":"1"},
+      "depthMin": {"value": "","show":"1"},
+      "depthMax": {"value": "","show":"1"},
+      "wireLength": {"value": "","show":"1"},
+      "quantity": {"value": "","show":"1"},
+      "opening": {"value": "","show":"1"},
+      "spread": {"value": "","show":"1"},
+      "comments": {"value": "","show":"1"}
+    }
+  ],
+  "gears": [
+  {
+    "uuid": {"value": "802eb6ccf51326a48a65edcb","show":"-1"},
+    "name": {"value": "Agassis trÃ¥l","show":"0"},
+    "mainGroup": {"uuid": "37467d3a149506e8414f0421","value": "bottomgear","show":"0"},
+    "code": {"value": "5500","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "7378acb65a60d9bce83a2ad0","show":"-1"},
+    "name": {"value": "Akustisk lander","show":"0"},
+    "mainGroup": {"uuid": "04f71a9995bb6c969f154033","value": "lander","show":"0"},
+    "code": {"value": "10040","show":"0"}
+  },
+  {
+    "uuid": {"value": "bf4f17793be8ea4b9f243e6a","show":"-1"},
+    "name": {"value": "Annen stasjon","show":"0"},
+    "mainGroup": {"uuid": "f5230278ce071f47add55323","value": "other","show":"0"},
+    "code": {"value": "0","show":"0"}
+  },
+  {
+    "uuid": {"value": "7b86e951724a6fd54393f06c","show":"-1"},
+    "name": {"value": "BomtrÃ¥l","show":"0"},
+    "mainGroup": {"uuid": "37467d3a149506e8414f0421","value": "bottomgear","show":"0"},
+    "code": {"value": "5600","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "04b69685d06f4b02da9fc32a","show":"-1"},
+    "name": {"value": "BunntrÃ¥l","show":"0"},
+    "mainGroup": {"uuid": "70a5ea63500d5b3643bf7209","value": "trawl","show":"0"},
+    "code": {"value": "1600","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "1df5756ea48076295f434d2c","show":"-1"},
+    "name": {"value": "CTD","show":"0"},
+    "mainGroup": {"uuid": "76b5a07d1bf5abd7f74e507c","value": "ctd","show":"0"},
+    "code": {"value": "1000","show":"0"}
+  },
+  {
+    "uuid": {"value": "f53f4a1316bd2768a52b0858","show":"-1"},
+    "name": {"value": "CTD med vannhenter","show":"0"},
+    "mainGroup": {"uuid": "76b5a07d1bf5abd7f74e507c","value": "ctd","show":"0"},
+    "code": {"value": "1100","show":"0"}
+  },
+  {
+    "uuid": {"value": "84cf0d5b136cfe2e1ae273d8","show":"-1"},
+    "name": {"value": "Focus","show":"0"},
+    "mainGroup": {"uuid": "e1f2ba7765c8074845b5c3fc","value": "plantonGear","show":"0"},
+    "code": {"value": "5300","show":"0"}
+  },
+  {
+    "uuid": {"value": "d466a2d23166e8486a703654","show":"-1"},
+    "name": {"value": "Grabb","show":"0"},
+    "mainGroup": {"uuid": "37467d3a149506e8414f0421","value": "bottomgear","show":"0"},
+    "code": {"value": "1700","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "b8dc7dfb198d3e4a9f05c761","show":"-1"},
+    "name": {"value": "Kurs forandring","show":"0"},
+    "mainGroup": {"uuid": "f5230278ce071f47add55323","value": "other","show":"0"},
+    "code": {"value": "900","show":"0"},
+    "heading":{"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "b95d2b78fa8e1f693ffe93dc","show":"-1"},
+    "name": {"value":  "Mik","show":"0"},
+    "mainGroup": {"uuid": "e1f2ba7765c8074845b5c3fc","value": "plantonGear","show":"0"},
+    "code": {"value": "2800","show":"0"}
+  },
+  {
+    "uuid": {"value": "d1e39f787bff0821daf43738","show":"-1"},
+    "name": {"value":  "Multicorer","show":"0"},
+    "mainGroup": {"uuid": "37467d3a149506e8414f0421","value": "bottomgear","show":"0"},
+    "code": {"value": "20090","show":"0"}
+  },
+  {
+    "uuid": {"value": "c4875317a2cf0b5c7eecbfce","show":"-1"},
+    "name": {"value":  "Multinett","show":"0"},
+    "mainGroup": {"uuid": "e1f2ba7765c8074845b5c3fc","value": "plantonGear","show":"0"},
+    "code": {"value": "2500","show":"0"}
+  },
+  {
+    "uuid": {"value": "5747cc65ef77e0c905cb36e9","show":"-1"},
+    "name": {"value":  "Multisampler","show":"0"},
+    "mainGroup": {"uuid": "e1f2ba7765c8074845b5c3fc","value": "plantonGear","show":"0"},
+    "code": {"value": "10100","show":"0"}
+  },
+  {
+    "uuid": {"value": "12e1a69111be7453ed505313","show":"-1"},
+    "name": {"value":  "Pelagisk trÃ¥l","show":"0"},
+    "mainGroup": {"uuid": "70a5ea63500d5b3643bf7209","value": "trawl","show":"0"},
+    "code": {"value": "1500","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "37f1d2a6fa7e6e71900d1492","show":"-1"},
+    "name": {"value":  "PÃ¥ kurslinje","show":"0"},
+    "mainGroup": {"uuid": "f5230278ce071f47add55323","value": "other","show":"0"},
+    "code": {"value": "2700","show":"0"}
+  },
+  {
+    "uuid": {"value": "a37ad96050f7796a25373773","show":"-1"},
+    "name": {"value":  "ROV","show":"0"},
+    "mainGroup": {"uuid": "f7b9351bb5ec5e4e75d9a471","value": "rov","show":"0"},
+    "code": {"value": "10060","show":"0"}
+  },
+  {
+    "uuid": {"value": "686ea6884321f6851e2fb4f2","show":"-1"},
+    "name": {"value": "SjÃ¸pattedyr observasjon","show":"0"},
+    "mainGroup": {"uuid": "707832091df4abb887cacfa9","value": "seaMammals","show":"0"},
+    "code": {"value": "3020","show":"0"}
+  },
+  {
+    "uuid": {"value": "0be0a5170a6592731fabec38","show":"-1"},
+    "name": {"value":  "Slede","show":"0"},
+    "mainGroup": {"uuid": "37467d3a149506e8414f0421","value": "bottomgear","show":"0"},
+    "code": {"value": "5400","show":"0"},
+    "gearCode": {"value": "","show":"1"}
+  },
+  {
+    "uuid": {"value": "506737a5f995df0924ea8b63","show":"-1"},
+    "name": {"value":  "Snu pÃ¥ registreringer","show":"0"},
+    "mainGroup": {"uuid": "f5230278ce071f47add55323","value": "other","show":"0"},
+    "code": {"value": "2600","show":"0"}
+  },
+  {
+    "uuid": {"value": "299de0eef607a6a273839f24","show":"-1"},
+    "name": {"value":  "Toktdagbok","show":"0"},
+    "mainGroup": {"uuid": "f5230278ce071f47add55323","value": "other","show":"0"},
+    "code": {"value": "30010","show":"0"}
+  },
+  {
+    "uuid": {"value": "a7712ccad7323008b940fabf","show":"-1"},
+    "name": {"value":  "TS probe","show":"0"},
+    "mainGroup": {"uuid": "57f2a66b6ad67bc138d5953b","value": "acoustics","show":"0"},
+    "code": {"value": "10170","show":"0"}
+  },
+  {
+    "uuid": {"value": "0d31c6d51371e5dda2523b00","show":"-1"},
+    "name": {"value":  "Vannhenter","show":"0"},
+    "mainGroup": {"uuid": "76b5a07d1bf5abd7f74e507c","value": "ctd","show":"0"},
+    "code": {"value": "1200","show":"0"}
+  }
+  ]}
+}
